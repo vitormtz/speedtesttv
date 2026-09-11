@@ -93,9 +93,55 @@ html[data-lang="pt"] [lang="en"] { display: none; }
     letter-spacing: 0.5px;
     text-decoration: none;
     color: var(--texto);
+    border-radius: 12px;
+    transition: transform .22s ease;
 }
-.marca img { width: 34px; height: 34px; border-radius: 9px; }
-.marca span { color: var(--ciano); }
+.marca img {
+    width: 34px; height: 34px; border-radius: 9px;
+    transition: box-shadow .22s ease;
+}
+.marca .nome { font-size: 18px; line-height: 1; white-space: nowrap; }
+/* "Test" com o gradiente do app; a cor cheia fica de reserva para engine sem
+   background-clip. */
+.marca span {
+    color: var(--ciano);
+    background: linear-gradient(90deg, var(--ciano), var(--roxo) 55%, var(--rosa));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* "TV" na moldura arredondada, como no cabecalho do app. */
+.marca em {
+    display: inline-block;
+    font-style: normal;
+    font-size: .72em;
+    line-height: 1;
+    margin-left: 7px;
+    padding: 4px 7px 3px;
+    border: 2px solid var(--ciano);
+    border-radius: 8px;
+    vertical-align: 2px;
+    transition: border-color .22s ease, background .22s ease, box-shadow .22s ease;
+}
+/* Sem troca de cor no hover: a marca so ganha brilho ciano e sobe 1 px. A cor
+   e fixada aqui porque a regra generica `a:hover` pintaria tudo de rosa. */
+.marca:hover,
+.marca:focus-visible { color: var(--texto); transform: translateY(-1px); }
+.marca:hover img,
+.marca:focus-visible img {
+    box-shadow: 0 0 0 1px rgba(0, 217, 255, .55), 0 6px 18px rgba(0, 217, 255, .35);
+}
+.marca:hover em,
+.marca:focus-visible em {
+    border-color: #5ce8ff;
+    background: rgba(0, 217, 255, .12);
+    box-shadow: 0 0 14px rgba(0, 217, 255, .35);
+}
+.marca:focus-visible { outline: 2px solid var(--ciano); outline-offset: 6px; }
+@media (prefers-reduced-motion: reduce) {
+    .marca, .marca img, .marca em { transition: none; }
+    .marca:hover, .marca:focus-visible { transform: none; }
+}
 
 .idiomas { display: flex; gap: 6px; }
 .idiomas button {
