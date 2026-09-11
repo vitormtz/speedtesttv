@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeedTest TV — internet speed test for Samsung Smart TV</title>
+<meta name="description" content="SpeedTest TV measures ping, download and upload speed directly on your Samsung Smart TV. No account, no ads, no data collection.">
+<link rel="icon" href="assets/mark.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grade"></div>
+
+<div class="envelope">
+
+<header class="topo">
+    <a class="marca" href="index.html">
+        <img src="assets/mark.png" alt="">
+        Speed<span>Test</span>&nbsp;TV
+    </a>
+    <div class="idiomas">
+        <button type="button" data-set-lang="pt" aria-pressed="false">PT</button>
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+    </div>
+</header>
+
+<main class="faixa">
+
+    <div class="heroi">
+        <img class="logo" src="assets/logo.png" alt="SpeedTest TV">
+        <p class="linha" lang="en">Measure your internet connection straight from your television.
+            Ping, download and upload — no account, no ads, nothing stored.</p>
+        <p class="linha" lang="pt">Meça sua conexão de internet direto da televisão.
+            Ping, download e upload — sem conta, sem anúncios, sem guardar nada.</p>
+        <span class="selo" lang="en">For Samsung Smart TV</span>
+        <span class="selo" lang="pt">Para Samsung Smart TV</span>
+    </div>
+
+    <section>
+        <h2 lang="en">What it <b>measures</b></h2>
+        <h2 lang="pt">O que ele <b>mede</b></h2>
+        <p class="sub" lang="en">Three numbers, in one run of about 25 seconds.</p>
+        <p class="sub" lang="pt">Três números, numa rodada de cerca de 25 segundos.</p>
+
+        <div class="cartoes">
+            <article class="cartao ping">
+                <h3>Ping</h3>
+                <p lang="en">The time a packet takes to reach the server and come back.
+                    Lower is better — it is what matters most for games and video calls.</p>
+                <p lang="pt">O tempo que um dado leva para ir ao servidor e voltar.
+                    Quanto menor, melhor — é o que mais pesa em jogos e chamadas de vídeo.</p>
+            </article>
+            <article class="cartao down">
+                <h3>Download</h3>
+                <p lang="en">How fast the TV receives data. As a reference, Netflix
+                    recommends about 3&nbsp;Mbps for HD, 5&nbsp;Mbps for Full HD and
+                    15&nbsp;Mbps for 4K; some services ask for up to 25&nbsp;Mbps for 4K.</p>
+                <p lang="pt">A velocidade com que a TV recebe dados. Como referência, a
+                    Netflix recomenda cerca de 3&nbsp;Mbps para HD, 5&nbsp;Mbps para Full HD
+                    e 15&nbsp;Mbps para 4K; alguns serviços pedem até 25&nbsp;Mbps em 4K.</p>
+            </article>
+            <article class="cartao up">
+                <h3>Upload</h3>
+                <p lang="en">How fast the TV sends data. It matters for video calls,
+                    live streaming and cloud backup.</p>
+                <p lang="pt">A velocidade com que a TV envia dados. Importa em chamadas
+                    de vídeo, transmissão ao vivo e backup na nuvem.</p>
+            </article>
+        </div>
+    </section>
+
+    <section>
+        <h2 lang="en">On <b>screen</b></h2>
+        <h2 lang="pt">Na <b>tela</b></h2>
+
+        <div class="telas" lang="en">
+            <figure>
+                <img src="assets/shot-en-1.jpg" alt="Idle screen, ready to start the test">
+                <figcaption>Ready — press OK to start.</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/shot-en-2.jpg" alt="Measuring download speed">
+                <figcaption>Live reading while measuring.</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/shot-en-3.jpg" alt="Test finished with the three results">
+                <figcaption>Result — ping, download and upload.</figcaption>
+            </figure>
+        </div>
+
+        <div class="telas" lang="pt">
+            <figure>
+                <img src="assets/shot-pt-1.jpg" alt="Tela inicial, pronta para iniciar o teste">
+                <figcaption>Pronto — pressione OK para iniciar.</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/shot-pt-2.jpg" alt="Medindo a velocidade de download">
+                <figcaption>Leitura ao vivo durante a medição.</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/shot-pt-3.jpg" alt="Teste concluído com os três resultados">
+                <figcaption>Resultado — ping, download e upload.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section>
+        <h2 lang="en">How it <b>works</b></h2>
+        <h2 lang="pt">Como <b>funciona</b></h2>
+
+        <div class="bloco">
+            <h3 lang="en">It picks the closest server, every single test</h3>
+            <h3 lang="pt">Ele escolhe o servidor mais próximo, a cada teste</h3>
+            <p lang="en">Before measuring, the app pings every candidate server and adopts
+                the one with the lowest latency. The candidates are public measurement
+                endpoints — Cloudflare and Netflix Open Connect — and both of them serve
+                a server near you, wherever you are. Nothing is hardcoded to one country.</p>
+            <p lang="pt">Antes de medir, o app mede o ping de todos os servidores candidatos
+                e adota o de menor latência. Os candidatos são serviços públicos de medição
+                — Cloudflare e Netflix Open Connect — e os dois entregam um servidor perto
+                de você, onde quer que esteja. Nada está fixo num país.</p>
+
+            <h3 lang="en">The latency is the floor, not an average</h3>
+            <h3 lang="pt">A latência é o piso, não uma média</h3>
+            <p lang="en">Network jitter only ever adds delay, never removes it. So the app
+                warms the connection up, discards that first sample, and reports the
+                <strong>minimum</strong> across several rounds — the closest thing to the
+                real latency of the link.</p>
+            <p lang="pt">O ruído de rede só soma atraso, nunca subtrai. Por isso o app aquece
+                a conexão, descarta essa primeira amostra e informa o <strong>mínimo</strong>
+                de várias rodadas — o mais próximo da latência real do link.</p>
+
+            <h3 lang="en">It works without a network too</h3>
+            <h3 lang="pt">Funciona sem rede também</h3>
+            <p lang="en">If the connection drops, the app says so plainly instead of hanging
+                or showing a wrong number, and it recovers on its own when the network
+                comes back.</p>
+            <p lang="pt">Se a conexão cair, o app avisa em vez de travar ou mostrar um número
+                errado, e se recupera sozinho quando a rede volta.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 lang="en"><b>Privacy</b></h2>
+        <h2 lang="pt"><b>Privacidade</b></h2>
+
+        <div class="bloco">
+            <p lang="en">The application has <strong>no account, no login and no analytics</strong>.
+                It stores nothing on the television — no cookies, no local storage, no test
+                history. When you close it, nothing remains.</p>
+            <p lang="pt">O aplicativo <strong>não tem conta, login nem ferramenta de análise</strong>.
+                Não grava nada na televisão — sem cookies, sem armazenamento local, sem
+                histórico de testes. Ao fechá-lo, nada permanece.</p>
+            <p lang="en">The screen shows the connection type and the television's local IP address,
+                so you can see which connection is being measured. That information never leaves
+                the television.</p>
+            <p lang="pt">A tela mostra o tipo de conexão e o endereço IP local da TV, para você saber
+                qual conexão está sendo medida. Essa informação não sai da televisão.</p>
+            <a class="botao" href="privacy.html" lang="en">Read the full privacy policy</a>
+            <a class="botao" href="privacy.html" lang="pt">Ler a política de privacidade completa</a>
+        </div>
+    </section>
+
+    <section id="suporte">
+        <h2 lang="en"><b>Support</b></h2>
+        <h2 lang="pt"><b>Suporte</b></h2>
+
+        <div class="bloco">
+            <p lang="en">Questions, problems or suggestions about the application:</p>
+            <p lang="pt">Dúvidas, problemas ou sugestões sobre o aplicativo:</p>
+            <table class="dados">
+                <tr>
+                    <th lang="en">E-mail</th>
+                    <th lang="pt">E-mail</th>
+                    <td><a href="mailto:speedtesttv.suporte@gmail.com">speedtesttv.suporte@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <th lang="en">Application</th>
+                    <th lang="pt">Aplicativo</th>
+                    <td>SpeedTestTV 1.0.0</td>
+                </tr>
+                <tr>
+                    <th lang="en">Platform</th>
+                    <th lang="pt">Plataforma</th>
+                    <td lang="en">Samsung Smart TV, 2017 models and later (Tizen 3.0+)</td>
+                    <td lang="pt">Samsung Smart TV, modelos de 2017 em diante (Tizen 3.0+)</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <div class="faixa">
+        <span lang="en">SpeedTest TV — internet speed test for Samsung Smart TV.</span>
+        <span lang="pt">SpeedTest TV — teste de velocidade para Samsung Smart TV.</span>
+        <nav>
+            <a href="privacy.html" lang="en">Privacy policy</a>
+            <a href="privacy.html" lang="pt">Política de privacidade</a>
+            <a href="#suporte" lang="en">Support</a>
+            <a href="#suporte" lang="pt">Suporte</a>
+        </nav>
+    </div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+    var raiz = document.documentElement;
+
+    function aplicar(lang) {
+        raiz.setAttribute('data-lang', lang);
+        raiz.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+        var b = document.querySelectorAll('[data-set-lang]');
+        for (var i = 0; i < b.length; i++) {
+            b[i].setAttribute('aria-pressed',
+                b[i].getAttribute('data-set-lang') === lang ? 'true' : 'false');
+        }
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    var escolhido = null;
+    try { escolhido = localStorage.getItem('lang'); } catch (e) {}
+    if (escolhido !== 'pt' && escolhido !== 'en') {
+        var nav = (navigator.language || '').toLowerCase();
+        escolhido = nav.indexOf('pt') === 0 ? 'pt' : 'en';
+    }
+    aplicar(escolhido);
+
+    document.addEventListener('click', function (e) {
+        var alvo = e.target.closest ? e.target.closest('[data-set-lang]') : null;
+        if (alvo) aplicar(alvo.getAttribute('data-set-lang'));
+    });
+})();
+</script>
+
+</body>
+</html>

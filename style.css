@@ -1,0 +1,291 @@
+/* SpeedTest TV - site institucional.
+   Identidade do app: fundo #06081a, ciano #00d9ff, roxo #7c5cff, rosa #ff2d92.
+   Sem framework e sem build: dois HTML e este arquivo. */
+
+:root {
+    --fundo: #06081a;
+    --painel: #0f1535;
+    --painel-topo: #1a2040;
+    --borda: #2a3358;
+    --texto: #ffffff;
+    --suave: #8a93b8;
+    --ciano: #00d9ff;
+    --roxo: #7c5cff;
+    --rosa: #ff2d92;
+    --verde: #4ade80;
+    --largura: 1080px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Fundo: mesma composicao do app - grade fina e dois brilhos nos cantos. */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 1100px;
+    height: 1100px;
+    pointer-events: none;
+    z-index: 0;
+}
+body::before {
+    top: -420px; left: -320px;
+    background: radial-gradient(closest-side circle,
+        rgba(0, 217, 255, 0.20), rgba(0, 217, 255, 0.10) 55%, rgba(0, 217, 255, 0) 100%);
+}
+body::after {
+    bottom: -420px; right: -320px;
+    background: radial-gradient(closest-side circle,
+        rgba(124, 92, 255, 0.20), rgba(124, 92, 255, 0.10) 55%, rgba(124, 92, 255, 0) 100%);
+}
+
+.grade {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(ellipse at center, rgba(6, 8, 26, 0) 10%, rgba(6, 8, 26, 0.95) 78%),
+        linear-gradient(rgba(0, 217, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 64px 64px, 64px 64px;
+}
+
+.envelope { position: relative; z-index: 1; }
+
+.faixa {
+    max-width: var(--largura);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- Idioma ---------- */
+/* Ingles e o padrao no HTML; o JS troca para portugues quando o navegador
+   estiver em pt. Assim a pagina funciona mesmo sem JS. */
+html[data-lang="en"] [lang="pt"],
+html[data-lang="pt"] [lang="en"] { display: none; }
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    max-width: var(--largura);
+    margin: 0 auto;
+}
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: var(--texto);
+}
+.marca img { width: 34px; height: 34px; border-radius: 9px; }
+.marca span { color: var(--ciano); }
+
+.idiomas { display: flex; gap: 6px; }
+.idiomas button {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 7px 15px;
+    border-radius: 999px;
+    border: 1px solid var(--borda);
+    background: transparent;
+    color: var(--suave);
+    cursor: pointer;
+    transition: color .2s, border-color .2s, background .2s;
+}
+.idiomas button:hover { color: var(--texto); border-color: var(--ciano); }
+.idiomas button[aria-pressed="true"] {
+    color: #04121c;
+    background: var(--ciano);
+    border-color: var(--ciano);
+}
+
+/* ---------- Herói ---------- */
+.heroi {
+    text-align: center;
+    padding: 42px 0 72px;
+}
+.heroi img.logo {
+    width: min(680px, 88vw);
+    height: auto;
+    display: block;
+    margin: 0 auto 26px;
+}
+.heroi p.linha {
+    font-size: clamp(18px, 2.4vw, 23px);
+    color: var(--suave);
+    max-width: 620px;
+    margin: 0 auto 26px;
+}
+.selo {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    border: 1px solid rgba(0, 217, 255, .45);
+    border-radius: 999px;
+    color: var(--ciano);
+    background: rgba(0, 217, 255, .07);
+}
+
+/* ---------- Seções ---------- */
+section { padding: 56px 0; }
+h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+h2 b { font-weight: 700; }
+.sub {
+    color: var(--suave);
+    margin-bottom: 32px;
+    max-width: 660px;
+}
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+.cartao {
+    background: linear-gradient(180deg, rgba(26, 32, 64, .85), rgba(15, 21, 53, .85));
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 26px 24px;
+    position: relative;
+    overflow: hidden;
+}
+.cartao::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ciano);
+}
+.cartao.ping::before { background: var(--rosa); }
+.cartao.down::before { background: var(--ciano); }
+.cartao.up::before   { background: var(--verde); }
+.cartao h3 {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.cartao.ping h3 { color: var(--rosa); }
+.cartao.down h3 { color: var(--ciano); }
+.cartao.up   h3 { color: var(--verde); }
+.cartao p { color: var(--suave); font-size: 15px; }
+
+.telas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+}
+.telas figure {
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--painel);
+}
+.telas img { width: 100%; height: auto; display: block; }
+.telas figcaption {
+    font-size: 13px;
+    color: var(--suave);
+    padding: 12px 16px;
+    border-top: 1px solid var(--borda);
+}
+
+.bloco {
+    background: linear-gradient(180deg, rgba(26, 32, 64, .6), rgba(15, 21, 53, .6));
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 30px 28px;
+}
+/* Margem no proprio h3, nao em "p + h3": os pares de idioma deixam um irmao
+   oculto entre eles, e o seletor adjacente casaria com o elemento errado. */
+.bloco h3 { font-size: 18px; margin-bottom: 10px; margin-top: 26px; }
+.bloco h3:first-child { margin-top: 0; }
+.bloco p, .bloco li { color: var(--suave); }
+.bloco p { margin-bottom: 12px; }
+.bloco p:last-child { margin-bottom: 0; }
+.bloco ul { margin: 10px 0 0 20px; }
+.bloco li { margin-bottom: 7px; }
+.bloco strong { color: var(--texto); }
+
+a { color: var(--ciano); }
+a:hover { color: var(--rosa); }
+
+.botao {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 30px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--ciano), var(--roxo));
+    color: #04121c;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+.botao:hover {
+    color: #04121c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 34px rgba(0, 217, 255, .3);
+}
+
+table.dados {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 15px;
+}
+table.dados th, table.dados td {
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--borda);
+    color: var(--suave);
+    vertical-align: top;
+}
+table.dados th { color: var(--texto); font-weight: 600; white-space: nowrap; }
+
+.rodape {
+    border-top: 1px solid var(--borda);
+    margin-top: 40px;
+    padding: 30px 0 46px;
+    color: var(--suave);
+    font-size: 14px;
+}
+.rodape .faixa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+}
+.rodape nav { display: flex; gap: 18px; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+    section { padding: 40px 0; }
+    .heroi { padding: 26px 0 48px; }
+}
